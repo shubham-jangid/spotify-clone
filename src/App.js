@@ -6,6 +6,7 @@ import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import { useStateValue } from "./StateProvider";
 
+import Player from "./player/Player"
 import "./App.css";
 
 const spotifyApi = new SpotifyWebApi();
@@ -38,7 +39,7 @@ function App() {
   console.log(user);
   console.log(token);
 
-  return <>{token ? <h1>user logedin</h1> : <Login />}</>;
+  return <>{token ? <Player/> : <Login />}</>;
 }
 
 export default App;
