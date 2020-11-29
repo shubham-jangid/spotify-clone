@@ -6,7 +6,7 @@ import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import { useStateValue } from "./StateProvider";
 
-import Player from "./player/Player"
+import Player from "./player/Player";
 import "./App.css";
 
 const spotifyApi = new SpotifyWebApi();
@@ -33,13 +33,23 @@ function App() {
           });
         })
         .catch((err) => console.log(err));
+
+      spotifyApi
+        .getUserPlaylists(token)
+        .then((playlists) => {
+          dispatch({
+            type: "SET_PLAYLISTS",
+            playlists: playlists,
+          });
+        })
+        .catch((err) => console.log(err));
     }
   }, []);
 
   console.log(user);
   console.log(token);
 
-  return <>{token ? <Player/> : <Login />}</>;
+  return <>{token ? <Player /> : <Login />}</>;
 }
 
 export default App;
