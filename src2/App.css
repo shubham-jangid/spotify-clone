@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loginPage{
+    background-color: black;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPage >img{
+    width: 30vh;
+   margin-bottom: 10vh;
+}
+
+.loginPage >a {
+    background-color: #1DB954;
+    color:white;
+    font-size: 800;
+    text-decoration: none;
+    border-radius: 99px;
+    padding:5px 20px;
+    
+}
